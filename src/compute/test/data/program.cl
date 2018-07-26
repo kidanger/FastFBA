@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------//
-// Copyright (c) 2014 Denis Demidov
+// Copyright (c) 2017 Jakub Szuppe <j.szuppe@gmail.com>
 //
 // Distributed under the Boost Software License, Version 1.0
 // See accompanying file LICENSE_1_0.txt or copy at
@@ -8,13 +8,8 @@
 // See http://boostorg.github.com/compute for more information.
 //---------------------------------------------------------------------------//
 
-#ifndef BOOST_COMPUTE_TEST_OPENCL_VERSION_CHECK_HPP
-#define BOOST_COMPUTE_TEST_OPENCL_VERSION_CHECK_HPP
-
-#define REQUIRES_OPENCL_VERSION(major, minor) \
-    if (!device.check_version(major, minor)) return
-
-#define REQUIRES_OPENCL_PLATFORM_VERSION(major, minor) \
-    if (!device.platform().check_version(major, minor)) return
-
-#endif
+__kernel void foobar(__global int* x)
+{
+    const int gid = get_global_id(0);
+    x[gid] = gid;
+}

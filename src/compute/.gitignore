@@ -9,3 +9,6 @@ build/
 
 # generated documentation
 bin/
+doc/bin/
+doc/html/
+doc/autodoc.xml
